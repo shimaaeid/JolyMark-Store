@@ -11,6 +11,15 @@
 |
 */
 
+Route::get('pay', 'FatooraController@payOrder');
+Route::get('callback', function(){
+    return "success";
+});
+Route::get('error' , function(){
+    return "error";
+});
+
+
 Route::get('/', function () {
     return view('index');
 });
