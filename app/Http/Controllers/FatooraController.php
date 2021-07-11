@@ -22,7 +22,7 @@ class FatooraController extends Controller
             'CustomerName'       => 'fname lname',
             'DisplayCurrencyIso' => 'KWD',
             'CustomerEmail'      => 'shimaa@gmail.com',
-            'CallBackUrl'        => 'https://google.com',
+            'CallBackUrl'        => 'http://localhost/JolyMark-Store/api/call_back',
             'ErrorUrl'           => 'https://youtube.com', //or 'https://example.com/error.php'
             'Language'           => 'en', //or 'ar'
              //Fill optional data
@@ -30,6 +30,12 @@ class FatooraController extends Controller
         ];
 
        return  $this->fatoraServices->sendPayment($data);
+
+    }
+
+    public function paymentCallBack(Request $request){
+
+        dd($request);
 
     }
 }
